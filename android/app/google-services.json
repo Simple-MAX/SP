@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "926387552988",
+    "firebase_url": "https://sharp-note-app.firebaseio.com",
+    "project_id": "sharp-note-app",
+    "storage_bucket": "sharp-note-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926387552988:android:48d8d78c96a3805857ea19",
+        "android_client_info": {
+          "package_name": "com.nordiskteknologi.sharpnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926387552988-3pcfa995nctrp3buvei7u8msu8kiojfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzyDlEBwsPZlL5OIlc7mMes4hoB7iTdO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926387552988-3pcfa995nctrp3buvei7u8msu8kiojfq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
