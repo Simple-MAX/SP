@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sharpnote/src/screens/home_screen.dart';
 
 class IntroScreen extends StatefulWidget {
   @override
@@ -44,10 +45,10 @@ class _IntroScreenState extends State<IntroScreen> {
               end: Alignment.bottomCenter,
               stops: [0.1, 0.4, 0.7, 0.9],
               colors: [
-                Color(0xFF3594DD),
-                Color(0xFF4563DB),
-                Color(0xFF5036D5),
-                Color(0xFF5B16D0),
+                Color(0xff1D1A30),
+                Color(0xff1D1A30),
+                Color(0xff1D1A30),
+                Color(0xff1D1A30),
               ],
             ),
           ),
@@ -59,7 +60,8 @@ class _IntroScreenState extends State<IntroScreen> {
                 Container(
                   alignment: Alignment.centerRight,
                   child: FlatButton(
-                    onPressed: () => print('Skip'),
+                    onPressed: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen())),
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -70,7 +72,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   ),
                 ),
                 Container(
-                  height: 400.0,
+                  height: 450.0,
                   child: PageView(
                     physics: ClampingScrollPhysics(),
                     controller: _pageController,
@@ -88,7 +90,7 @@ class _IntroScreenState extends State<IntroScreen> {
                             Center(
                               child: Image(
                                 image: AssetImage(
-                                  'assets/images/onboarding0.png',
+                                  'assets/png/splash (1).png',
                                 ),
                                 height: 200.0,
                                 width: 200.0,
@@ -96,11 +98,19 @@ class _IntroScreenState extends State<IntroScreen> {
                             ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Connect people\naround the world',
+                              'Magically turn voice into\nsearchable, shareable notes',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 15.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'Record your meeting, lecture or conversation and get the notes automatically on your device',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w100),
                             ),
                           ],
                         ),
@@ -113,7 +123,7 @@ class _IntroScreenState extends State<IntroScreen> {
                             Center(
                               child: Image(
                                 image: AssetImage(
-                                  'assets/images/onboarding1.png',
+                                  'assets/png/splash (2).png',
                                 ),
                                 height: 200.0,
                                 width: 200.0,
@@ -121,11 +131,19 @@ class _IntroScreenState extends State<IntroScreen> {
                             ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Live your life smarter\nwith us!',
+                              'All of your conversations are\nsecure in Sharpnote',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 15.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'Keep your meeting, interviews, journals, and voice memos organized in one safe place',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w100),
                             ),
                           ],
                         ),
@@ -138,7 +156,7 @@ class _IntroScreenState extends State<IntroScreen> {
                             Center(
                               child: Image(
                                 image: AssetImage(
-                                  'assets/images/onboarding2.png',
+                                  'assets/png/splash (3).png',
                                 ),
                                 height: 200.0,
                                 width: 200.0,
@@ -146,11 +164,19 @@ class _IntroScreenState extends State<IntroScreen> {
                             ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Get a new experience\nof imagination',
+                              'Sharpnote improve itself and you',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 15.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'Everybody take notes in different ways, we use AI to ensure that you get the notes in your way.',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w100),
                             ),
                           ],
                         ),
@@ -207,7 +233,8 @@ class _IntroScreenState extends State<IntroScreen> {
               width: double.infinity,
               color: Colors.white,
               child: GestureDetector(
-                onTap: () => print('Get started'),
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen())),
                 child: Center(
                   child: Padding(
                     padding: EdgeInsets.only(bottom: 30.0),

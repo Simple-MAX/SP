@@ -49,8 +49,8 @@ class App extends StatelessWidget {
             return SplashScreen();
           }
           if (state is Unauthenticated) {
-            //return LoginScreen(userRepository: _userRepository);
-            return IntroScreen();
+            return LoginScreen(userRepository: _userRepository);
+            //return IntroScreen();
           }
           if (state is Authenticated) {
             return HomeScreen(name: state.displayName);
