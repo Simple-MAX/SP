@@ -7,8 +7,7 @@ import 'package:sharpnote/src/bloc/bloc.dart';
 import 'package:sharpnote/bloc_delegate.dart';
 import 'package:sharpnote/src/screens/splash_screen.dart';
 import 'package:sharpnote/src/screens/home_screen.dart';
-import 'package:sharpnote/src/login/login_screen.dart';
-import 'package:sharpnote/src/widgets/intro_slider.dart';
+import 'package:sharpnote/src/screens/intro_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,11 +48,11 @@ class App extends StatelessWidget {
             return SplashScreen();
           }
           if (state is Unauthenticated) {
-            return LoginScreen(userRepository: _userRepository);
+            return IntroScreen(userRepository: _userRepository);
             //return IntroScreen();
           }
           if (state is Authenticated) {
-            return HomeScreen(name: state.displayName);
+            return HomeScreen();
           }
         },
       ),
