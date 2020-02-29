@@ -12,12 +12,10 @@ class LoginButton extends StatelessWidget {
     return RaisedButton(
       disabledColor: Color(0xFFFFFFFF),
       disabledTextColor: Color(0xFF8E8E93),
+      textColor: Color(0xFFFFFFFF),
       color: Color(0xFF007AFF),
       onPressed: _onPressed,
-      child: Text(
-        'Login',
-        style: TextStyle(color: Colors.white),
-      ),
+      child: Text('Login'),
     );
   }
 }

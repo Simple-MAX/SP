@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sharpnote/src/login/login_screen.dart';
+import 'package:sharpnote/src/register/register_form.dart';
+import 'package:sharpnote/src/register/register_screen.dart';
 import 'package:sharpnote/src/user_repository.dart';
 import 'package:sharpnote/src/login/login_form.dart';
 
@@ -225,7 +227,9 @@ class IntroScreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginForm()));
+                                    builder: (context) => RegisterScreen(
+                                          userRepository: _userRepository,
+                                        )));
                           },
                         ),
                       ),

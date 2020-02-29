@@ -72,6 +72,102 @@ class _RegisterFormState extends State<RegisterForm> {
       child: BlocBuilder<RegisterBloc, RegisterState>(
         builder: (context, state) {
           return Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Form(
+              child: ListView(
+                children: <Widget>[
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width / 5,
+                  ),
+                  Text(
+                    'Enter your email and\n choose a password',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Text(
+                    'We need to look up your account or\ncreate a new one',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white54,
+                      fontWeight: FontWeight.w100,
+                      fontSize: 15,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  AccentColorOverride(
+                    color: Colors.white,
+                    child: TextFormField(
+                      style: TextStyle(color: Colors.white),
+                      controller: _emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: TextStyle(color: Colors.white70),
+                        fillColor: Colors.white,
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Colors.white54, width: 0.0),
+                        ),
+                      ),
+                      autovalidate: false,
+                      autocorrect: false,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return null;
+                        }
+                        return !state.isEmailValid ? 'Invalid Email' : null;
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  AccentColorOverride(
+                    color: Colors.white,
+                    child: TextFormField(
+                      style: TextStyle(color: Colors.white),
+                      controller: _passwordController,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        labelStyle: TextStyle(color: Colors.white70),
+                        fillColor: Colors.white,
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Colors.white54, width: 0.0),
+                        ),
+                      ),
+                      obscureText: true,
+                      autovalidate: true,
+                      autocorrect: false,
+                      validator: (_) {
+                        return !state.isPasswordValid
+                            ? 'Invalid Password'
+                            : null;
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  RegisterButton(
+                    onPressed: isRegisterButtonEnabled(state)
+                        ? _onFormSubmitted
+                        : null,
+                  ),
+                ],
+              ),
+            ),
+          );
+          /*Padding(
             padding: EdgeInsets.all(20),
             child: Form(
               child: ListView(
@@ -110,7 +206,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 ],
               ),
             ),
-          );
+          );*/
         },
       ),
     );
@@ -140,6 +236,32 @@ class _RegisterFormState extends State<RegisterForm> {
       Submitted(
         email: _emailController.text,
         password: _passwordController.text,
+      ),
+    );
+  }
+}
+
+class AccentColorOverride extends StatelessWidget {
+  const AccentColorOverride({Key key, this.color, this.child})
+      : super(key: key);
+
+  final Color color;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Theme(
+      child: child,
+      data: Theme.of(context).copyWith(
+        accentColor: color,
+        brightness: Brightness.dark,
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: color,
+            ),
+          ),
+        ),
       ),
     );
   }
