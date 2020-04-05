@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
 import 'package:sharpnote/src/widgets/recordings.dart' as recordings;
+//import 'package:sharpnote/src/widgets/mediacontroller.dart' as recordings;
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key key}) : super(key: key);
